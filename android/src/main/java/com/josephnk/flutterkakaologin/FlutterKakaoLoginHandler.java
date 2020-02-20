@@ -23,6 +23,7 @@ import com.kakao.usermgmt.callback.LogoutResponseCallback;
 import com.kakao.usermgmt.callback.MeV2ResponseCallback;
 import com.kakao.usermgmt.callback.UnLinkResponseCallback;
 import com.kakao.usermgmt.response.MeV2Response;
+import com.kakao.usermgmt.response.model.Gender;
 import com.kakao.usermgmt.response.model.UserAccount;
 import com.kakao.util.exception.KakaoException;
 import com.kakao.util.helper.log.Logger;
@@ -190,6 +191,11 @@ public class FlutterKakaoLoginHandler
                 : (userAccount.getPhoneNumber() == null) ? "" : userAccount.getPhoneNumber();
         final String userDisplayID = (userAccount == null) ? ""
                 : (userAccount.getDisplayId() == null) ? "" : userAccount.getDisplayId();
+        final Gender gender = (userAccount == null) ? Gender.UNKNOWN
+                : (userAccount.getGender() == null) ? Gender.UNKNOWN : userAccount.getGender();
+        final String userGender =  (userAccount == null) ? "" : (userAccount.getGender() == null ) ? "" : userAccount.getGender().getValue();
+        final String userAgeRange =  (userAccount == null) ? "" : (userAccount.getAgeRange() == null ) ? "" : userAccount.getAgeRange().getValue();
+        final String userBirthday =  (userAccount == null) ? "" : (userAccount.getBirthday() == null ) ? "" : userAccount.getBirthday();
 
         Log.v(LOG_TAG, "kakao : onSuccess " + "userID: " + userID + " and userEmail: " + userEmail);
 
@@ -203,6 +209,9 @@ public class FlutterKakaoLoginHandler
             put("userEmail", userEmail);
             put("userPhoneNumber", userPhoneNumber);
             put("userDisplayID", userDisplayID);
+            put("userGender", userGender);
+            put("userAgeRange", userAgeRange);
+            put("userBirthday", userBirthday);
           }
         });
       }

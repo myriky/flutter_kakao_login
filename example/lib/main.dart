@@ -124,6 +124,9 @@ class _MyAppState extends State<MyApp> {
       final userPhoneNumber = (account.userPhoneNumber == null) ? 'None' : account.userPhoneNumber;
       final userDisplayID = (account.userDisplayID == null) ? 'None' : account.userDisplayID;
       final userNickname = (account.userNickname == null) ? 'None' : account.userNickname;
+      final userGender = (account.userGender == null) ? 'None' : account.userGender;
+      final userAgeRange = (account.userAgeRange == null) ? 'None' : account.userAgeRange;
+      final userBirthday = (account.userBirthday == null) ? 'None' : account.userBirthday;
       final userProfileImagePath = (account.userProfileImagePath == null) ? 'None' : account.userProfileImagePath;
       final userThumbnailImagePath = (account.userThumbnailImagePath == null) ? 'None' : account.userThumbnailImagePath;
 
@@ -132,6 +135,9 @@ class _MyAppState extends State<MyApp> {
                             '- PhoneNumber is ${userPhoneNumber}\n'
                             '- DisplayID is ${userDisplayID}\n'
                             '- Nickname is ${userNickname}\n'
+                            '- Gender is ${userGender}\n'
+                            '- Age is ${userAgeRange}\n'
+                            '- Birthday is ${userBirthday}\n'
                             '- ProfileImagePath is ${userProfileImagePath}\n'
                             '- ThumbnailImagePath is ${userThumbnailImagePath}');
     }

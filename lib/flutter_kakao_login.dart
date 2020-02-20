@@ -105,6 +105,12 @@ class KakaoAccountResult {
 
   final String userNickname;
 
+  final String userGender;
+
+  final String userAgeRange;
+
+  final String userBirthday;
+
   final String userProfileImagePath;
 
   final String userThumbnailImagePath;
@@ -115,6 +121,9 @@ class KakaoAccountResult {
         userPhoneNumber = map['userPhoneNumber'],
         userDisplayID = map['userDisplayID'],
         userNickname = map['userNickname'],
+        userGender = map['userGender'],
+        userAgeRange = map['userAgeRange'],
+        userBirthday = map['userBirthday'],
         userProfileImagePath = map['userProfileImagePath'],
         userThumbnailImagePath = map['userThumbnailImagePath'];
 }
